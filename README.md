@@ -39,6 +39,6 @@ Once the message displays as "Application is running" follow below steps
 
 -r cli is for viewing the test report in the command line. -r progress or -r json can be used as well. 
 
-# Please read the detailed document I crafted for the E2E framework proposal, design and assumptionn along with E2E/Integration test cases for the application 
+# Please read the detailed document I crafted for the E2E framework proposal, design and assumptions along with E2E/Integration test cases for the application 
 
 https://docs.google.com/document/d/191IHPwj9SucXH7Fa6-CYtZAs8ZCgrM03Tk0eyJPpzKc/edit?usp=sharing 
