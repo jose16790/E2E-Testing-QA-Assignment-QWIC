@@ -30,8 +30,8 @@ https://github.com/qwicengineering/qa-assignment), following the same procedure.
 
 Once the message displays as "Application is running" follow below steps
 
-2. Open a new command prompt and navigate to the downloaded folder "E2E Testing" using 'cd' command
- Ex : cd C:\Users\jose\E2E Testing
+2. Open a new command prompt and navigate to the folder "e2e-testing" in the downloaded repo, using 'cd' command
+ Ex : cd C:\Users\jose\E2E Testing for QA Assignment - QWIC\e2e-testing
  
 3. Execute the Test Suite using the below command (The JSON mentioned below is the executable file for Newman, generated from postman tests I've written) 
 
