@@ -1,0 +1,6 @@
+// Screen captures for scenarios validated in postman attached in the below document link //
+
+// The same is executed using newman through command prompt, 
+   by invoking the Tests-for-Car-API-newman.json. Details to execute the tests are in the git readme //
+
+https://docs.google.com/document/d/1BGPhHFnKcp8fXNu9Y34PCuLjtEunDOzgryEm05Dmr0M/edit?usp=sharing

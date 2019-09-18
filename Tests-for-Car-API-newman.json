@@ -1,0 +1,481 @@
+{
+	"id": "6dd36f12-f3f8-cea0-21db-380a0a6a8dc7",
+	"name": "Tests for Car-API",
+	"allTests": [],
+	"timestamp": 1568755817576,
+	"collection_id": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+		"name": "Tests for Car-API",
+		"description": "",
+		"order": [
+			"299b4b39-e9b8-0a8d-9119-fe4a5da19c96",
+			"3d9d5ccf-9299-64f2-2524-05a2636616fa",
+			"934b906f-29d6-3911-1600-f4e95fa2f0a8",
+			"219565df-cd3c-7d81-58cf-6b60bf26131a"
+		],
+		"folders": [],
+		"folders_order": [],
+		"requests": [
+			{
+				"id": "219565df-cd3c-7d81-58cf-6b60bf26131a",
+				"headers": "",
+				"headerData": [],
+				"url": "http://localhost:3000/cars?brand=BMW",
+				"queryParams": [
+					{
+						"key": "brand",
+						"value": "BMW",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					}
+				],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Populate models only for brand as BMW\"] = responseBody.has(\"i3\",\n                \"i8\",\n                \"M3\",\n                \"M4\",\n                \"M5\",\n                \"M6\",\n                \"Rad 1\",\n                \"Rad 1 Cabrio\",\n                \"Rad 1 Coupé\",\n                \"Rad 2\",\n                \"Rad 2 Active Tourer\",\n                \"Rad 2 Coupé\",\n                \"Rad 2 Gran Tourer\",\n                \"Rad 3\",\n                \"Rad 3 Cabrio\",\n                \"Rad 3 Compact\",\n                \"Rad 3 Coupé\",\n                \"Rad 3 GT\",\n                \"Rad 3 Touring\",\n                \"Rad 4\",\n                \"Rad 4 Cabrio\",\n                \"Rad 4 Gran Coupé\",\n                \"Rad 5\",\n                \"Rad 5 GT\",\n                \"Rad 5 Touring\",\n                \"Rad 6\",\n                \"Rad 6 Cabrio\",\n                \"Rad 6 Coupé\",\n                \"Rad 6 Gran Coupé\",\n                \"Rad 7\",\n                \"Rad 8 Coupé\",\n                \"X1\",\n                \"X3\",\n                \"X4\",\n                \"X5\",\n                \"X6\",\n                \"Z3\",\n                \"Z3 Coupé\",\n                \"Z3 Roadster\",\n                \"Z4\",\n                \"Z4 Roadster\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1568755789687,
+				"name": "Scenario : Validate the models listed for a brand - Test - BMW",
+				"description": "This scenario is to validate the models populated for BMW as brand. \n\nTests : \n\n- API response check\n- Check for BMW as a brand \n- Check for models listed for BMW\n- No other models other than BMW as brand should be populated",
+				"collectionId": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+				"responses": []
+			},
+			{
+				"id": "299b4b39-e9b8-0a8d-9119-fe4a5da19c96",
+				"headers": "",
+				"headerData": [],
+				"url": "http://localhost:3000/cars",
+				"queryParams": [
+					{
+						"key": "",
+						"value": "",
+						"equals": false,
+						"enabled": false
+					}
+				],
+				"preRequestScript": "",
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"version": 2,
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Brand & Models loaded\"] = responseBody.has(\"brand\",\"models\");\n\ntests[\"Data Validation - List of Brands check with DB\"] = responseBody.has(\"BMW\",\"seat\",\"Renault\",\"Peugeot\",\"Dacia\",\"Citroën\",\"Opel\",\"Alfa Romeo\",\"Škoda\",\"Chevrolet\",\"Porsche\",\"Honda\",\"Subaru\",\"Mazda\",\"Mitsubishi\",\"Lexus\",\"Toyota\",\"Volkswagen\",\"Suzuki\",\"Mercedes-Benz\",\"Saab\",\"Audi\",\"Kia\",\"Land Rover\",\"Dodge\",\"Chrysler\",\"Ford\",\"Hummer\",\"Hyundai\",\"Infiniti\",\"Jaguar\",\"Jeep\",\"Nissan\",\"Volvo\",\"Daewoo\",\"Fiat\",\"MINI\",\"Rover\",\"Smart\");\n\n\n\ntests[\"Data Validation - List of Models check with DB\"] = responseBody.has(\n                \"Alhambra\",\n                \"Altea\",\n                \"Altea XL\",\n                \"Arosa\",\n                \"Cordoba\",\n                \"Cordoba Vario\",\n                \"Exeo\",\n                \"Ibiza\",\n                \"Ibiza ST\",\n                \"Exeo ST\",\n                \"Leon\",\n                \"Leon ST\",\n                \"Inca\",\n                \"Mii\",\n                \"Toledo\",\n                \"Captur\",\n                \"Clio\",\n                \"Clio Grandtour\",\n                \"Espace\",\n                \"Express\",\n                \"Fluence\",\n                \"Grand Espace\",\n                \"Grand Modus\",\n                \"Grand Scenic\",\n                \"Kadjar\",\n                \"Kangoo\",\n                \"Kangoo Express\",\n                \"Koleos\",\n                \"Laguna\",\n                \"Laguna Grandtour\",\n                \"Latitude\",\n                \"Mascott\",\n                \"Mégane\",\n                \"Mégane CC\",\n                \"Mégane Combi\",\n                \"Mégane Grandtour\",\n                \"Mégane Coupé\",\n                \"Mégane Scénic\",\n                \"Scénic\",\n                \"Talisman\",\n                \"Talisman Grandtour\",\n                \"Thalia\",\n                \"Twingo\",\n                \"Wind\",\n                \"Zoé\",\n                \"1007\",\n                \"107\",\n                \"106\",\n                \"108\",\n                \"2008\",\n                \"205\",\n                \"205 Cabrio\",\n                \"206\",\n                \"206 CC\",\n                \"206 SW\",\n                \"207\",\n                \"207 CC\",\n                \"207 SW\",\n                \"306\",\n                \"307\",\n                \"307 CC\",\n                \"307 SW\",\n                \"308\",\n                \"308 CC\",\n                \"308 SW\",\n                \"309\",\n                \"4007\",\n                \"4008\",\n                \"405\",\n                \"406\",\n                \"407\",\n                \"407 SW\",\n                \"5008\",\n                \"508\",\n                \"508 SW\",\n                \"605\",\n                \"806\",\n                \"607\",\n                \"807\",\n                \"Bipper\",\n                \"RCZ\",\n                \"Dokker\",\n                \"Duster\",\n                \"Lodgy\",\n                \"Logan\",\n                \"Logan MCV\",\n                \"Logan Van\",\n                \"Sandero\",\n                \"Solenza\",\n                \"Berlingo\",\n                \"C-Crosser\",\n                \"C-Elissée\",\n                \"C-Zero\",\n                \"C1\",\n                \"C2\",\n                \"C3\",\n                \"C3 Picasso\",\n                \"C4\",\n                \"C4 Aircross\",\n                \"C4 Cactus\",\n                \"C4 Coupé\",\n                \"C4 Grand Picasso\",\n                \"C4 Sedan\",\n                \"C5\",\n                \"C5 Break\",\n                \"C5 Tourer\",\n                \"C6\",\n                \"C8\",\n                \"DS3\",\n                \"DS4\",\n                \"DS5\",\n                \"Evasion\",\n                \"Jumper\",\n                \"Jumpy\",\n                \"Saxo\",\n                \"Nemo\",\n                \"Xantia\",\n                \"Xsara\",\n                \"Agila\",\n                \"Ampera\",\n                \"Antara\",\n                \"Astra\",\n                \"Astra cabrio\",\n                \"Astra caravan\",\n                \"Astra coupé\",\n                \"Calibra\",\n                \"Campo\",\n                \"Cascada\",\n                \"Corsa\",\n                \"Frontera\",\n                \"Insignia\",\n                \"Insignia kombi\",\n                \"Kadett\",\n                \"Meriva\",\n                \"Mokka\",\n                \"Movano\",\n                \"Omega\",\n                \"Signum\",\n                \"Vectra\",\n                \"Vectra Caravan\",\n                \"Vivaro\",\n                \"Vivaro Kombi\",\n                \"Zafira\",\n                \"145\",\n                \"146\",\n                \"147\",\n                \"155\",\n                \"156\",\n                \"156 Sportwagon\",\n                \"159\",\n                \"159 Sportwagon\",\n                \"164\",\n                \"166\",\n                \"4C\",\n                \"Brera\",\n                \"GTV\",\n                \"MiTo\",\n                \"Crosswagon\",\n                \"Spider\",\n                \"GT\",\n                \"Giulietta\",\n                \"Giulia\",\n                \"Favorit\",\n                \"Felicia\",\n                \"Citigo\",\n                \"Fabia\",\n                \"Fabia Combi\",\n                \"Fabia Sedan\",\n                \"Felicia Combi\",\n                \"Octavia\",\n                \"Octavia Combi\",\n                \"Roomster\",\n                \"Yeti\",\n                \"Rapid\",\n                \"Rapid Spaceback\",\n                \"Superb\",\n                \"Superb Combi\",\n                \"Alero\",\n                \"Aveo\",\n                \"Camaro\",\n                \"Captiva\",\n                \"Corvette\",\n                \"Cruze\",\n                \"Cruze SW\",\n                \"Epica\",\n                \"Equinox\",\n                \"Evanda\",\n                \"HHR\",\n                \"Kalos\",\n                \"Lacetti\",\n                \"Lacetti SW\",\n                \"Lumina\",\n                \"Malibu\",\n                \"Matiz\",\n                \"Monte Carlo\",\n                \"Nubira\",\n                \"Orlando\",\n                \"Spark\",\n                \"Suburban\",\n                \"Tacuma\",\n                \"Tahoe\",\n                \"Trax\",\n                \"911 Carrera\",\n                \"911 Carrera Cabrio\",\n                \"911 Targa\",\n                \"911 Turbo\",\n                \"924\",\n                \"944\",\n                \"997\",\n                \"Boxster\",\n                \"Cayenne\",\n                \"Cayman\",\n                \"Macan\",\n                \"Panamera\",\n                \"Accord\",\n                \"Accord Coupé\",\n                \"Accord Tourer\",\n                \"City\",\n                \"Civic\",\n                \"Civic Aerodeck\",\n                \"Civic Coupé\",\n                \"Civic Tourer\",\n                \"Civic Type R\",\n                \"CR-V\",\n                \"CR-X\",\n                \"CR-Z\",\n                \"FR-V\",\n                \"HR-V\",\n                \"Insight\",\n                \"Integra\",\n                \"Jazz\",\n                \"Legend\",\n                \"Prelude\",\n                \"BRZ\",\n                \"Forester\",\n                \"Impreza\",\n                \"Impreza Wagon\",\n                \"Justy\",\n                \"Legacy\",\n                \"Legacy Wagon\",\n                \"Legacy Outback\",\n                \"Levorg\",\n                \"Outback\",\n                \"SVX\",\n                \"Tribeca\",\n                \"Tribeca B9\",\n                \"XV\",\n                \"121\",\n                \"2\",\n                \"3\",\n                \"323\",\n                \"323 Combi\",\n                \"323 Coupé\",\n                \"323 F\",\n                \"5\",\n                \"6\",\n                \"6 Combi\",\n                \"626\",\n                \"626 Combi\",\n                \"B-Fighter\",\n                \"B2500\",\n                \"BT\",\n                \"CX-3\",\n                \"CX-5\",\n                \"CX-7\",\n                \"CX-9\",\n                \"Demio\",\n                \"MPV\",\n                \"MX-3\",\n                \"MX-5\",\n                \"MX-6\",\n                \"Premacy\",\n                \"RX-7\",\n                \"RX-8\",\n                \"Xedox 6\",\n                \"3000 GT\",\n                \"ASX\",\n                \"Carisma\",\n                \"Colt\",\n                \"Colt CC\",\n                \"Eclipse\",\n                \"Fuso canter\",\n                \"Galant\",\n                \"Galant Combi\",\n                \"Grandis\",\n                \"L200\",\n                \"L200 Pick up\",\n                \"L200 Pick up Allrad\",\n                \"L300\",\n                \"Lancer\",\n                \"Lancer Combi\",\n                \"Lancer Evo\",\n                \"Lancer Sportback\",\n                \"Outlander\",\n                \"Pajero\",\n                \"Pajeto Pinin\",\n                \"Pajero Pinin Wagon\",\n                \"Pajero Sport\",\n                \"Pajero Wagon\",\n                \"Space Star\",\n                \"CT\",\n                \"GS\",\n                \"GS 300\",\n                \"GX\",\n                \"IS\",\n                \"IS 200\",\n                \"IS 250 C\",\n                \"IS-F\",\n                \"LS\",\n                \"LX\",\n                \"NX\",\n                \"RC F\",\n                \"RX\",\n                \"RX 300\",\n                \"RX 400h\",\n                \"RX 450h\",\n                \"SC 430\",\n                \"4-Runner\",\n                \"Auris\",\n                \"Avensis\",\n                \"Avensis Combi\",\n                \"Avensis Van Verso\",\n                \"Aygo\",\n                \"Camry\",\n                \"Carina\",\n                \"Celica\",\n                \"Corolla\",\n                \"Corolla Combi\",\n                \"Corolla sedan\",\n                \"Corolla Verso\",\n                \"FJ Cruiser\",\n                \"GT86\",\n                \"Hiace\",\n                \"Hiace Van\",\n                \"Highlander\",\n                \"Hilux\",\n                \"Land Cruiser\",\n                \"MR2\",\n                \"Paseo\",\n                \"Picnic\",\n                \"Prius\",\n                \"RAV4\",\n                \"Sequoia\",\n                \"Starlet\",\n                \"Supra\",\n                \"Tundra\",\n                \"Urban Cruiser\",\n                \"Verso\",\n                \"Yaris\",\n                \"Yaris Verso\",\n                \"i3\",\n                \"i8\",\n                \"M3\",\n                \"M4\",\n                \"M5\",\n                \"M6\",\n                \"Rad 1\",\n                \"Rad 1 Cabrio\",\n                \"Rad 1 Coupé\",\n                \"Rad 2\",\n                \"Rad 2 Active Tourer\",\n                \"Rad 2 Coupé\",\n                \"Rad 2 Gran Tourer\",\n                \"Rad 3\",\n                \"Rad 3 Cabrio\",\n                \"Rad 3 Compact\",\n                \"Rad 3 Coupé\",\n                \"Rad 3 GT\",\n                \"Rad 3 Touring\",\n                \"Rad 4\",\n                \"Rad 4 Cabrio\",\n                \"Rad 4 Gran Coupé\",\n                \"Rad 5\",\n                \"Rad 5 GT\",\n                \"Rad 5 Touring\",\n                \"Rad 6\",\n                \"Rad 6 Cabrio\",\n                \"Rad 6 Coupé\",\n                \"Rad 6 Gran Coupé\",\n                \"Rad 7\",\n                \"Rad 8 Coupé\",\n                \"X1\",\n                \"X3\",\n                \"X4\",\n                \"X5\",\n                \"X6\",\n                \"Z3\",\n                \"Z3 Coupé\",\n                \"Z3 Roadster\",\n                \"Z4\",\n                \"Z4 Roadster\",\n                \"Amarok\",\n                \"Beetle\",\n                \"Bora\",\n                \"Bora Variant\",\n                \"Caddy\",\n                \"Caddy Van\",\n                \"Life\",\n                \"California\",\n                \"Caravelle\",\n                \"CC\",\n                \"Crafter\",\n                \"Crafter Van\",\n                \"Crafter Kombi\",\n                \"CrossTouran\",\n                \"Eos\",\n                \"Fox\",\n                \"Golf\",\n                \"Golf Cabrio\",\n                \"Golf Plus\",\n                \"Golf Sportvan\",\n                \"Golf Variant\",\n                \"Jetta\",\n                \"LT\",\n                \"Lupo\",\n                \"Multivan\",\n                \"New Beetle\",\n                \"New Beetle Cabrio\",\n                \"Passat\",\n                \"Passat Alltrack\",\n                \"Passat CC\",\n                \"Passat Variant\",\n                \"Passat Variant Van\",\n                \"Phaeton\",\n                \"Polo\",\n                \"Polo Van\",\n                \"Polo Variant\",\n                \"Scirocco\",\n                \"Sharan\",\n                \"T4\",\n                \"T4 Caravelle\",\n                \"T4 Multivan\",\n                \"T5\",\n                \"T5 Caravelle\",\n                \"T5 Multivan\",\n                \"T5 Transporter Shuttle\",\n                \"Tiguan\",\n                \"Touareg\",\n                \"Touran\",\n                \"Alto\",\n                \"Baleno\",\n                \"Baleno kombi\",\n                \"Grand Vitara\",\n                \"Grand Vitara XL-7\",\n                \"Ignis\",\n                \"Jimny\",\n                \"Kizashi\",\n                \"Liana\",\n                \"Samurai\",\n                \"Splash\",\n                \"Swift\",\n                \"SX4\",\n                \"SX4 Sedan\",\n                \"Vitara\",\n                \"Wagon R+\",\n                \"100 D\",\n                \"115\",\n                \"124\",\n                \"126\",\n                \"190\",\n                \"190 D\",\n                \"190 E\",\n                \"200 - 300\",\n                \"200 D\",\n                \"200 E\",\n                \"210 Van\",\n                \"210 kombi\",\n                \"310 Van\",\n                \"310 kombi\",\n                \"230 - 300 CE Coupé\",\n                \"260 - 560 SE\",\n                \"260 - 560 SEL\",\n                \"500 - 600 SEC Coupé\",\n                \"Trieda A\",\n                \"A\",\n                \"A L\",\n                \"AMG GT\",\n                \"Trieda B\",\n                \"Trieda C\",\n                \"C\",\n                \"C Sportcoupé\",\n                \"C T\",\n                \"Citan\",\n                \"CL\",\n                \"CLA\",\n                \"CLC\",\n                \"CLK Cabrio\",\n                \"CLK Coupé\",\n                \"CLS\",\n                \"Trieda E\",\n                \"E\",\n                \"E Cabrio\",\n                \"E Coupé\",\n                \"E T\",\n                \"Trieda G\",\n                \"G Cabrio\",\n                \"GL\",\n                \"GLA\",\n                \"GLC\",\n                \"GLE\",\n                \"GLK\",\n                \"Trieda M\",\n                \"MB 100\",\n                \"Trieda R\",\n                \"Trieda S\",\n                \"S\",\n                \"S Coupé\",\n                \"SL\",\n                \"SLC\",\n                \"SLK\",\n                \"SLR\",\n                \"Sprinter\",\n                \"9-3\",\n                \"9-3 Cabriolet\",\n                \"9-3 Coupé\",\n                \"9-3 SportCombi\",\n                \"9-5\",\n                \"9-5 SportCombi\",\n                \"900\",\n                \"900 C\",\n                \"900 C Turbo\",\n                \"9000\",\n                \"100\",\n                \"100 Avant\",\n                \"80\",\n                \"80 Avant\",\n                \"80 Cabrio\",\n                \"90\",\n                \"A1\",\n                \"A2\",\n                \"A3\",\n                \"A3 Cabriolet\",\n                \"A3 Limuzina\",\n                \"A3 Sportback\",\n                \"A4\",\n                \"A4 Allroad\",\n                \"A4 Avant\",\n                \"A4 Cabriolet\",\n                \"A5\",\n                \"A5 Cabriolet\",\n                \"A5 Sportback\",\n                \"A6\",\n                \"A6 Allroad\",\n                \"A6 Avant\",\n                \"A7\",\n                \"A8\",\n                \"A8 Long\",\n                \"Q3\",\n                \"Q5\",\n                \"Q7\",\n                \"R8\",\n                \"RS4 Cabriolet\",\n                \"RS4/RS4 Avant\",\n                \"RS5\",\n                \"RS6 Avant\",\n                \"RS7\",\n                \"S3/S3 Sportback\",\n                \"S4 Cabriolet\",\n                \"S4/S4 Avant\",\n                \"S5/S5 Cabriolet\",\n                \"S6/RS6\",\n                \"S7\",\n                \"S8\",\n                \"SQ5\",\n                \"TT Coupé\",\n                \"TT Roadster\",\n                \"TTS\",\n                \"Avella\",\n                \"Besta\",\n                \"Carens\",\n                \"Carnival\",\n                \"Cee`d\",\n                \"Cee`d SW\",\n                \"Cerato\",\n                \"K 2500\",\n                \"Magentis\",\n                \"Opirus\",\n                \"Optima\",\n                \"Picanto\",\n                \"Pregio\",\n                \"Pride\",\n                \"Pro Cee`d\",\n                \"Rio\",\n                \"Rio Combi\",\n                \"Rio sedan\",\n                \"Sephia\",\n                \"Shuma\",\n                \"Sorento\",\n                \"Soul\",\n                \"Sportage\",\n                \"Venga\",\n                \"109\",\n                \"Defender\",\n                \"Discovery\",\n                \"Discovery Sport\",\n                \"Freelander\",\n                \"Range Rover\",\n                \"Range Rover Evoque\",\n                \"Range Rover Sport\",\n                \"Avenger\",\n                \"Caliber\",\n                \"Challenger\",\n                \"Charger\",\n                \"Grand Caravan\",\n                \"Journey\",\n                \"Magnum\",\n                \"Nitro\",\n                \"RAM\",\n                \"Stealth\",\n                \"Viper\",\n                \"300 C\",\n                \"300 C Touring\",\n                \"300 M\",\n                \"Crossfire\",\n                \"Grand Voyager\",\n                \"LHS\",\n                \"Neon\",\n                \"Pacifica\",\n                \"Plymouth\",\n                \"PT Cruiser\",\n                \"Sebring\",\n                \"Sebring Convertible\",\n                \"Stratus\",\n                \"Stratus Cabrio\",\n                \"Town & Country\",\n                \"Voyager\",\n                \"Aerostar\",\n                \"B-Max\",\n                \"C-Max\",\n                \"Cortina\",\n                \"Cougar\",\n                \"Edge\",\n                \"Escort\",\n                \"Escort Cabrio\",\n                \"Escort kombi\",\n                \"Explorer\",\n                \"F-150\",\n                \"F-250\",\n                \"Fiesta\",\n                \"Focus\",\n                \"Focus C-Max\",\n                \"Focus CC\",\n                \"Focus kombi\",\n                \"Fusion\",\n                \"Galaxy\",\n                \"Grand C-Max\",\n                \"Ka\",\n                \"Kuga\",\n                \"Maverick\",\n                \"Mondeo\",\n                \"Mondeo Combi\",\n                \"Mustang\",\n                \"Orion\",\n                \"Puma\",\n                \"Ranger\",\n                \"S-Max\",\n                \"Sierra\",\n                \"Street Ka\",\n                \"Tourneo Connect\",\n                \"Tourneo Custom\",\n                \"Transit\",\n                \"Transit Bus\",\n                \"Transit Connect LWB\",\n                \"Transit Courier\",\n                \"Transit Custom\",\n                \"Transit kombi\",\n                \"Transit Tourneo\",\n                \"Transit Valnik\",\n                \"Transit Van\",\n                \"Transit Van 350\",\n                \"Windstar\",\n\t\t\t\t\"H2\",\n\t\t\t\t\"H3\",\n                \"Accent\",\n                \"Atos\",\n                \"Atos Prime\",\n                \"Coupé\",\n                \"Elantra\",\n                \"Galloper\",\n                \"Genesis\",\n                \"Getz\",\n                \"Grandeur\",\n                \"H 350\",\n                \"H1\",\n                \"H1 Bus\",\n                \"H1 Van\",\n                \"H200\",\n                \"i10\",\n                \"i20\",\n                \"i30\",\n                \"i30 CW\",\n                \"i40\",\n                \"i40 CW\",\n                \"ix20\",\n                \"ix35\",\n                \"ix55\",\n                \"Lantra\",\n                \"Matrix\",\n                \"Santa Fe\",\n                \"Sonata\",\n                \"Terracan\",\n                \"Trajet\",\n                \"Tucson\",\n                \"Veloster\",\n    \"EX\", \"FX\", \"G\", \"G Coupé\", \"M\", \"Q\", \"QX\",\n                \"Daimler\",\n                \"F-Pace\",\n                \"F-Type\",\n                \"S-Type\",\n                \"Sovereign\",\n                \"X-Type\",\n                \"X-type Estate\",\n                \"XE\",\n                \"XF\",\n                \"XJ\",\n                \"XJ12\",\n                \"XJ6\",\n                \"XJ8\",\n                \"XJ8\",\n                \"XJR\",\n                \"XK\",\n                \"XK8 Convertible\",\n                \"XKR\",\n                \"XKR Convertible\",\n                \"Cherokee\",\n                \"Commander\",\n                \"Compass\",\n                \"Grand Cherokee\",\n                \"Patriot\",\n                \"Renegade\",\n                \"Wrangler\",\n                \"100 NX\",\n                \"200 SX\",\n                \"350 Z\",\n                \"350 Z Roadster\",\n                \"370 Z\",\n                \"Almera\",\n                \"Almera Tino\",\n                \"Cabstar E - T\",\n                \"Cabstar TL2 Valnik\",\n                \"e-NV200\",\n                \"GT-R\",\n                \"Insterstar\",\n                \"Juke\",\n                \"King Cab\",\n                \"Leaf\",\n                \"Maxima\",\n                \"Maxima QX\",\n                \"Micra\",\n                \"Murano\",\n                \"Navara\",\n                \"Note\",\n                \"NP300 Pickup\",\n                \"NV200\",\n                \"NV400\",\n                \"Pathfinder\",\n                \"Patrol\",\n                \"Patrol GR\",\n                \"Pickup\",\n                \"Pixo\",\n                \"Primastar\",\n                \"Primastar Combi\",\n                \"Primera\",\n                \"Primera Combi\",\n                \"Pulsar\",\n                \"Qashqai\",\n                \"Serena\",\n                \"Sunny\",\n                \"Terrano\",\n                \"Tiida\",\n                \"Trade\",\n                \"Vanette Cargo\",\n                \"X-Trail\",\n                \"240\",\n                \"340\",\n                \"360\",\n                \"460\",\n                \"850\",\n                \"850 kombi\",\n                \"C30\",\n                \"C70\",\n                \"C70 Cabrio\",\n                \"C70 Coupé\",\n                \"S40\",\n                \"S60\",\n                \"S70\",\n                \"S80\",\n                \"S90\",\n                \"V40\",\n                \"V50\",\n                \"V60\",\n                \"V70\",\n                \"V90\",\n                \"XC60\",\n                \"XC70\",\n                \"XC90\",\n                \"Espero\",\n                \"Kalos\",\n                \"Lacetti\",\n                \"Lanos\",\n                \"Leganza\",\n                \"Lublin\",\n                \"Matiz\",\n                \"Nexia\",\n                \"Nubira\",\n                \"Nubira kombi\",\n                \"Racer\",\n                \"Tacuma\",\n                \"Tico\",\n                \"1100\",\n                \"126\",\n                \"500\",\n                \"500L\",\n                \"500X\",\n                \"850\",\n                \"Barchetta\",\n                \"Brava\",\n                \"Cinquecento\",\n                \"Coupé\",\n                \"Croma\",\n                \"Doblo\",\n                \"Doblo Cargo\",\n                \"Doblo Cargo Combi\",\n                \"Ducato\",\n                \"Ducato Van\",\n                \"Ducato Kombi\",\n                \"Ducato Podvozok\",\n                \"Florino\",\n                \"Florino Combi\",\n                \"Freemont\",\n                \"Grande Punto\",\n                \"Idea\",\n                \"Linea\",\n                \"Marea\",\n                \"Marea Weekend\",\n                \"Multipla\",\n                \"Palio Weekend\",\n                \"Panda\",\n                \"Panda Van\",\n                \"Punto\",\n                \"Punto Cabriolet\",\n                \"Punto Evo\",\n                \"Punto Van\",\n                \"Qubo\",\n                \"Scudo\",\n                \"Scudo Van\",\n                \"Scudo Kombi\",\n                \"Sedici\",\n                \"Seicento\",\n                \"Stilo\",\n                \"Stilo Multiwagon\",\n                \"Strada\",\n                \"Talento\",\n                \"Tipo\",\n                \"Ulysse\",\n                \"Uno\",\n                \"X1/9\",\n                \"Cooper\",\n                \"Cooper Cabrio\",\n                \"Cooper Clubman\",\n                \"Cooper D\",\n                \"Cooper D Clubman\",\n                \"Cooper S\",\n                \"Cooper S Cabrio\",\n                \"Cooper S Clubman\",\n                \"Countryman\",\n                \"Mini One\",\n                \"One D\",\n                \"200\",\n                \"214\",\n                \"218\",\n                \"25\",\n                \"400\",\n                \"414\",\n                \"416\",\n                \"620\",\n                \"75\",\n                \"Cabrio\",\n                \"City-Coupé\",\n                \"Compact Pulse\",\n                \"Forfour\",\n                \"Fortwo cabrio\",\n                \"Fortwo coupé\",\n                \"Roadster\");\n\npostman.setEnvironmentVariable(\"variable_key\", \"variable_value\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1568755779146,
+				"name": "Scenario : Validate the list of all brands and models",
+				"description": "This scenario is to get the list of all brands and models available in db.json. This should be the list populated in UI. \n\nTests : \n\n- Status code check \n- Brand and Model objects in JSON check\n- List of brands check\n- List of models check",
+				"collectionId": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+				"responses": []
+			},
+			{
+				"id": "3d9d5ccf-9299-64f2-2524-05a2636616fa",
+				"headers": "",
+				"headerData": [
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"enabled": false
+					}
+				],
+				"url": "http://localhost:3000/cars?brand=BMW",
+				"queryParams": [
+					{
+						"key": "brand",
+						"value": "BMW",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"equals": false,
+						"description": "",
+						"enabled": false
+					}
+				],
+				"preRequestScript": "",
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Populate only BMW as a brand\"] = responseBody !== (\"seat\",\"Renault\",\"Peugeot\",\"Dacia\",\"Citroën\",\"Opel\",\"Alfa Romeo\",\"Škoda\",\"Chevrolet\",\"Porsche\",\"Honda\",\"Subaru\",\"Mazda\",\"Mitsubishi\",\"Lexus\",\"Toyota\",\"Volkswagen\",\"Suzuki\",\"Mercedes-Benz\",\"Saab\",\"Audi\",\"Kia\",\"Land Rover\",\"Dodge\",\"Chrysler\",\"Ford\",\"Hummer\",\"Hyundai\",\"Infiniti\",\"Jaguar\",\"Jeep\",\"Nissan\",\"Volvo\",\"Daewoo\",\"Fiat\",\"MINI\",\"Rover\",\"Smart\");\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1568755786440,
+				"name": "Scenario : Validate brand selection - Test brand - BMW",
+				"description": "This scenario is to validate the selection of BMW as brand. \n\nTests : \n\n- API response check\n- Check for BMW as a brand \n- No other brands other than BMW should be populated",
+				"collectionId": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+				"responses": []
+			},
+			{
+				"id": "934b906f-29d6-3911-1600-f4e95fa2f0a8",
+				"headers": "",
+				"headerData": [],
+				"url": "http://localhost:3000/cars",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Response time Check - Should be less than 300ms\"] = responseTime < 300;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1568755797086,
+				"name": "Performance Check - Acceptable response time - 300ms",
+				"description": "This test is to validate the response time of the API call.\n\nAssumption - Acceptable max time 300ms. ",
+				"collectionId": "a0673ae2-4fed-c141-7b12-6e6959ea8289",
+				"responses": []
+			}
+		],
+		"timestamp": 1568740469836,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": 0,
+		"subscribed": false,
+		"createdAt": 1568740469836,
+		"updatedAt": 1568749076252,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "299b4b39-e9b8-0a8d-9119-fe4a5da19c96",
+			"name": "Scenario : Validate the list of all brands and models",
+			"url": "http://localhost:3000/cars",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Brand & Models loaded": true,
+				"Data Validation - List of Brands check with DB": true,
+				"Data Validation - List of Models check with DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Brand & Models loaded": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data Validation - List of Brands check with DB": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data Validation - List of Models check with DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				302
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Brand & Models loaded": true,
+					"Data Validation - List of Brands check with DB": true,
+					"Data Validation - List of Models check with DB": true
+				}
+			],
+			"time": 302,
+			"totalRequestTime": 302,
+			"iterationResults": {}
+		},
+		{
+			"id": "3d9d5ccf-9299-64f2-2524-05a2636616fa",
+			"name": "Scenario : Validate brand selection - Test brand - BMW",
+			"url": "http://localhost:3000/cars?brand=BMW",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Populate only BMW as a brand": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Populate only BMW as a brand": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Populate only BMW as a brand": true
+				}
+			],
+			"time": 31,
+			"totalRequestTime": 31,
+			"iterationResults": {}
+		},
+		{
+			"id": "934b906f-29d6-3911-1600-f4e95fa2f0a8",
+			"name": "Performance Check - Acceptable response time - 300ms",
+			"url": "http://localhost:3000/cars",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Response time Check - Should be less than 300ms": true
+			},
+			"testPassFailCounts": {
+				"Response time Check - Should be less than 300ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				111
+			],
+			"allTests": [
+				{
+					"Response time Check - Should be less than 300ms": true
+				}
+			],
+			"time": 111,
+			"totalRequestTime": 111,
+			"iterationResults": {}
+		},
+		{
+			"id": "219565df-cd3c-7d81-58cf-6b60bf26131a",
+			"name": "Scenario : Validate the models listed for a brand - Test - BMW",
+			"url": "http://localhost:3000/cars?brand=BMW",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Populate models only for brand as BMW": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Populate models only for brand as BMW": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Populate models only for brand as BMW": true
+				}
+			],
+			"time": 20,
+			"totalRequestTime": 20,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 9,
+	"totalFail": 0,
+	"totalTime": 464,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "Scenario : Validate the list of all brands and models",
+			"id": "299b4b39-e9b8-0a8d-9119-fe4a5da19c96",
+			"url": "http://localhost:3000/cars",
+			"time": 302,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Brand & Models loaded": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data Validation - List of Brands check with DB": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data Validation - List of Models check with DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"Brand & Models loaded",
+				"Data Validation - List of Brands check with DB",
+				"Data Validation - List of Models check with DB"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"Brand & Models loaded": true,
+				"Data Validation - List of Brands check with DB": true,
+				"Data Validation - List of Models check with DB": true
+			}
+		},
+		{
+			"name": "Scenario : Validate brand selection - Test brand - BMW",
+			"id": "3d9d5ccf-9299-64f2-2524-05a2636616fa",
+			"url": "http://localhost:3000/cars?brand=BMW",
+			"time": 31,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Populate only BMW as a brand": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"Populate only BMW as a brand"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"Populate only BMW as a brand": true
+			}
+		},
+		{
+			"name": "Performance Check - Acceptable response time - 300ms",
+			"id": "934b906f-29d6-3911-1600-f4e95fa2f0a8",
+			"url": "http://localhost:3000/cars",
+			"time": 111,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Response time Check - Should be less than 300ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Response time Check - Should be less than 300ms"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Response time Check - Should be less than 300ms": true
+			}
+		},
+		{
+			"name": "Scenario : Validate the models listed for a brand - Test - BMW",
+			"id": "219565df-cd3c-7d81-58cf-6b60bf26131a",
+			"url": "http://localhost:3000/cars?brand=BMW",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Populate models only for brand as BMW": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Status code is 200",
+				"Populate models only for brand as BMW"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Status code is 200": true,
+				"Populate models only for brand as BMW": true
+			}
+		}
+	],
+	"synced": false
+}

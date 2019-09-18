@@ -1,0 +1,4 @@
+// E2E framework proposal, design and assumptions are included in the below document,
+along with E2E/Integration test cases for the application // 
+
+https://docs.google.com/document/d/191IHPwj9SucXH7Fa6-CYtZAs8ZCgrM03Tk0eyJPpzKc/edit?usp=sharing
