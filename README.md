@@ -20,9 +20,9 @@ After node.js is ready to use, follow below steps
 
 # Execution of Test Suite: 
 
-1. Run the QA Assignment application shared by Sil in Diego's Git link, following the same procedure. Project can be downloaded 
+1. Run the QA Assignment application shared by Sil in Diego's Git link (
+https://github.com/qwicengineering/qa-assignment), following the same procedure. Project is also downloaded along with this git repo.
 
-https://github.com/qwicengineering/qa-assignment
 
    Run the application from Search-Form folder
 
