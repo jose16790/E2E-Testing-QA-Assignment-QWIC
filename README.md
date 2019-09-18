@@ -20,7 +20,7 @@ After node.js is ready to use, follow below steps
 
 # Execution of Test Suite: 
 
-1. Download the project and run the application in localhost:3000, following the same procedure as in QA Assignment Git by Diego. 
+1. Run the QA Assignment application shared by Sil in Diego's Git link, following the same procedure. Project can be downloaded 
 
 https://github.com/qwicengineering/qa-assignment
 
