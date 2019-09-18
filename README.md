@@ -1,4 +1,6 @@
-# E2E-Testing-QA-Assignment-QWIC
+# E2E-Testing-QA-Assignment-QWIC by Jose Durai Prabhakar 
+
+https://www.linkedin.com/in/jose16790/
 
 # API/UI Integration Tests using Postman/Newman
 
